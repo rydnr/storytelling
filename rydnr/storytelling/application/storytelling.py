@@ -30,11 +30,9 @@ from rydnr.storytelling.infrastructure.story.http import FileStoryHttpServer
 
 
 @enable(GraphicNovelRequestedCli)
-@enable(StripRequestedCli)
-@enable(PromptServerStartRequestedCli)
 # @enable(OpenAIPainter)
 @enable(StartFileStoryHttpServerCli)
-@enable(FileStoryHttpServer)
+# @enable(FileStoryHttpServer)
 class Storytelling(PythonEDA):
     """
     Runs the Storytelling PythonEDA app.

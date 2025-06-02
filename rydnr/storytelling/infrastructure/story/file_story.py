@@ -21,6 +21,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 from pythoneda.shared import Port, primary_key_attribute
 from rydnr.storytelling.story.story import Story, Strip
+from typing import List
 
 
 class FileStory(Story):

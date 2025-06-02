@@ -19,11 +19,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-from pythoneda.shared import attribute, primary_key_attribute, value_object
-from .character import Character
-from .context import Context
-from .dialog import Dialog
-from .panel_size import CharacterSize
+from pythoneda.shared import attribute, primary_key_attribute, ValueObject
 from typing import List
 
 

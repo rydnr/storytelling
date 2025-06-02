@@ -25,7 +25,7 @@ from rydnr.storytelling.infrastructure.story import FileStory
 from typing import Union
 
 
-class FileStoryHttpServer(CliHandler, PrimaryPort):
+class FileStoryHttpServer:
     """
     A PrimaryPort used to launch a FileStoryHttpServer.
 
@@ -38,15 +38,13 @@ class FileStoryHttpServer(CliHandler, PrimaryPort):
         - pythoneda.shared.application.PythonEDA: It is notified back with the information retrieved from the command line.
     """
 
-    def __init__(self, port: int = 8080, folder: str):
+    def __init__(self, port: int, folder: str):
         """
         Creates a new FileStoryHttpServer instance.
         """
         self._port = port
         self._folder = folder
-        super().__init__(
-            "Launches a FileStory HTTP Server", "FileStoryHttpServer"
-        )
+        super().__init__("Launches a FileStory HTTP Server", "FileStoryHttpServer")
 
     @property
     def port(self) -> int:
@@ -68,5 +66,7 @@ class FileStoryHttpServer(CliHandler, PrimaryPort):
         """
         Launches the HTTP server.
         """
-        FileStoryHttpServer.logger().info("Starting FileStory HTTP Server on port {self.port} for folder {self.folder} ...")
+        FileStoryHttpServer.logger().info(
+            "Starting FileStory HTTP Server on port {self.port} for folder {self.folder} ..."
+        )
         sleep(3000)

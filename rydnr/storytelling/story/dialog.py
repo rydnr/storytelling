@@ -19,9 +19,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-from pythoneda.shared import primary_key_attribute, value_object
+from pythoneda.shared import primary_key_attribute, ValueObject
 from .character import Character
-from typing import Map
+from typing import Dict
 
 
 class Dialog(ValueObject):
@@ -37,13 +37,13 @@ class Dialog(ValueObject):
         - None
     """
 
-    def __init__(self, character: Character, text: Map[str, str]):
+    def __init__(self, character: Character, text: Dict[str, str]):
         """
         Creates a new Dialog instance.
         :param character: The character.
         :type character: int
         :param text: The dialog texts.
-        :type text: Map[str,str]
+        :type text: Dict[str,str]
         """
         self._character = character
         self._text = text
@@ -61,11 +61,11 @@ class Dialog(ValueObject):
 
     @property
     @primary_key_attribute
-    def text(self) -> Map[str, str]:
+    def text(self) -> Dict[str, str]:
         """
         Retrieves the text, internationalized.
         :return: The text.
-        :rtype: Map[str,str]
+        :rtype: Dict[str,str]
         """
         return self._text
 
